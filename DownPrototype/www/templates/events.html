@@ -1,8 +1,30 @@
+<style>
+  ion-item {
+    height: 30vh;
+    display: table;
+  }
+  #title {
+    font-size: 1.5em;
+  }
+  #second-content {
+    height: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+
+</style>
 <ion-view view-title="Events">
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="event in events" href="#/app/events/{{playlist.id}}">
-        {{event.title}}
+        <div id="first-content">
+          <p id="title">{{event.title}}</p>
+          <p id="date">{{event.date}}</p>
+        </div>
+        <div id="second-content">
+          <p id="location">{{event.location}}</p>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>

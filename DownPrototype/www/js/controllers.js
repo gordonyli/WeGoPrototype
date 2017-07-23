@@ -43,7 +43,13 @@ angular.module('starter.controllers', [])
 
 .controller('EventsCtrl', function($scope) {
   $scope.events = [
-    { title: 'Music Midtown', id: 1 },
+    { title: 'Music Midtown',
+      id: 1,
+      description: "cool music",
+      friendsdown: 3,
+      date: "August 11, 2017",
+      location: "17 miles away"
+    },
     { title: 'Chill', id: 2 },
     { title: 'Dubstep', id: 3 },
     { title: 'Indie', id: 4 },
