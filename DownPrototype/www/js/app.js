@@ -72,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'tab-events': {
           templateUrl: "templates/event.html",
-          controller: 'EventsCtrl'
+          controller: 'EventCtrl'
         }
       }
     });
