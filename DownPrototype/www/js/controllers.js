@@ -125,6 +125,16 @@ angular.module('starter.controllers', [])
   $scope.event = EventService.getEvent($scope.eventId);
 })
 
-.controller("DownCtrl", function($scope, $stateParams, EventService) {
+.controller("DownCtrl", function($scope, $stateParams, EventService, $location) {
   $scope.events = EventService.getEvents();
+  $scope.changeView = function(event){
+    console.log("/events/" + event.id);
+      $location.path("/events/"+ event.id); // path not hash
+  }
+  $scope.goToEvent = function(event) {
+    return event.id;
+  }
+  $scope.test = function() {
+    alert('sdfasdf');
+  }
 });
