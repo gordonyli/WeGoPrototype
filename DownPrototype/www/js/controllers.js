@@ -9,9 +9,9 @@ angular.module('starter.controllers', [])
         description: "The greatest artists around the country come together in one single music festival to bring Atlanta the best music.",
         friendsdown: 3,
         date: "August 11, 2017",
-        day: "11",
-        month: "AUG",
-        year: "2017",
+        // day: "11",
+        // month: "AUG",
+        // year: "2017",
         location: "Piedmont Park",
         distance: "17 miles away",
         background: "http://wallpapersdsc.net/wp-content/uploads/2016/10/John-Mayer-Widescreen.jpg",
@@ -22,9 +22,9 @@ angular.module('starter.controllers', [])
         description: "yummy food",
         friendsdown: 17,
         date: "September 25, 2017",
-        day: "25",
-        month: "SEP",
-        year: "2017",
+        // day: "25",
+        // month: "SEP",
+        // year: "2017",
         location: "Tech Square",
         distance: "0.6 miles",
         background: "https://c2.staticflickr.com/6/5736/23295852105_9c8b104dca_b.jpg"
@@ -35,9 +35,9 @@ angular.module('starter.controllers', [])
         description: "hack gt",
         friendsdown: 12,
         date: "October 5, 2017",
-        day: "5",
-        month: "OCT",
-        year: "2017",
+        // day: "5",
+        // month: "OCT",
+        // year: "2017",
         location: "College of Computing at GT",
         distance: "0.1 miles away",
         background: "https://4.bp.blogspot.com/-pigPfRWS3Sw/VWX-feGd7II/AAAAAAABjLE/K3JemRkjclI/s0/Coding_with_Style_wallpaper.jpg"
@@ -49,9 +49,9 @@ angular.module('starter.controllers', [])
         friendsdown: 21,
         date: "September 22, 2017",
         location: "Gasworks Park",
-        day: "22",
-        month: "SEP",
-        year: "2017",
+        // day: "22",
+        // month: "SEP",
+        // year: "2017",
         distance: "1.1 miles away",
         background: "http://www.tbo.com/storyimage/TB/20160326/ARTICLE/160329365/AR/0/AR-160329365.jpg"
       },
@@ -61,9 +61,9 @@ angular.module('starter.controllers', [])
         description: "speeches",
         friendsdown: 3,
         date: "July 30, 2017",
-        day: "30",
-        month: "JUL",
-        year: "2017",
+        // day: "30",
+        // month: "JUL",
+        // year: "2017",
         location: "Scheller College of Business",
         distance: "1.9 miles away",
         background: "http://www.newstatesman.com/sites/all/themes/creative-responsive-theme/images/new_statesman_events.jpg"
@@ -74,9 +74,9 @@ angular.module('starter.controllers', [])
         description: "water ballons",
         friendsdown: 12,
         date: "December 1, 2017",
-        day: "1",
-        month: "DEC",
-        year: "2017",
+        // day: "1",
+        // month: "DEC",
+        // year: "2017",
         location: "Bruck's mom house",
         distance: "0.5 miles away",
         background: "http://www.arizonagrandresort.com/wp-content/uploads/2014/08/Gallery_OasisEvent.jpg"
@@ -90,6 +90,26 @@ angular.module('starter.controllers', [])
         if (this.events[i].id == eventId) {
           return this.events[i];
         }
+      }
+    },
+    getDay: function(date) {
+      return date.split(" ")[1].replace(",", "");
+    },
+    getMonth: function (date) {
+      month = date.split(" ")[0];
+      switch(month) {
+          case "January": return "JAN";
+          case "February": return "FEB";
+          case "March": return "MAR";
+          case "April": return "APR";
+          case "May": return "MAY";
+          case "June": return "JUN";
+          case "July": return "JUL";
+          case "August": return "AUG";
+          case "September": return "SEP";
+          case "October": return "OCT";
+          case "November": return "NOV";
+          case "December": return "DEC";
       }
     }
   }
@@ -147,6 +167,8 @@ angular.module('starter.controllers', [])
 .controller('EventCtrl', function($scope, $stateParams, EventService) {
   $scope.eventId = $stateParams.eventId;
   $scope.event = EventService.getEvent($scope.eventId);
+  $scope.month = EventService.getMonth($scope.event.date);
+  $scope.day = EventService.getDay($scope.event.date);
 })
 
 .controller("DownCtrl", function($scope, $stateParams, EventService) {
