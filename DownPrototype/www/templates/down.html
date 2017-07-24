@@ -5,12 +5,13 @@
 
   #thumbnail-content {
     color: white !important;
+    font-size: 14px;
     border-bottom: 2px solid white;
     border-right: 1px solid white;
     border-left: 1px solid white;
 
     height: 130px;
-      width: 100%;
+    width: 100%;
   }
 </style>
 
@@ -20,9 +21,23 @@
     <div class=col-33 ng-repeat="event in events" ng-style="{'background-image':'url({{event.background}})','background-size' : 'cover', 'background-repeat' : 'no-repeat'}" href="#/app/events/{{event.id}}" ng-click="changeView(event)">
 
     <div id="thumbnail-content" style="background-color: transparent !important">
-      <p id="title">{{event.title}}</p>
+      <p id="title1">{{event.title}}</p>
     </div>
 
   </div>
   </ion-content>
 </ion-view>
+
+<!-- <ion-view view-title="I'm Down For">
+  <div ng-repeat="event in events" ng-style="{'background-image':'url({{event.background}})','background-size' : 'cover', 'background-repeat' : 'no-repeat'}" href="#/app/events/{{event.id}}" ng-click="changeView(event)">
+  <ion-card>
+  <ion-card-content id=thumbnail-content>
+
+    <ion-card-title>
+      {{event.title}}
+      </ion-card-title>
+
+  </ion-card-content>
+</ion-card>
+</div>
+</ion-view> -->
