@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
       friendsdown: 3,
       date: "August 11, 2017",
       location: "17 miles away",
-      background: "http://www.bakersfieldmusichalloffame.com/wp-content/uploads/2013/12/concert-wall.jpg"
+      background: "http://wallpapersdsc.net/wp-content/uploads/2016/10/John-Mayer-Widescreen.jpg",
     },
     { title: 'Taste of Atlanta',
       id: 2,
@@ -92,6 +92,12 @@ angular.module('starter.controllers', [])
       background:"http://www.arizonagrandresort.com/wp-content/uploads/2014/08/Gallery_OasisEvent.jpg"
     }
   ];
+  $scope.swipeLeft = function() {
+    alert("swiped left");
+  }
+  $scope.deleteItem = function (item) {
+    $scope.events.splice($scope.events.indexOf(item), 1);
+  };
 })
 
 .controller('EventCtrl', function($scope, $stateParams) {

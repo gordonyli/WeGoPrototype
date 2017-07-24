@@ -13,22 +13,44 @@
   }
   .item-content {
     background-color: transparent !important;
+    height: 100%;
   }
   p {
     color: white !important;
   }
-
+  .circle {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #F7B733;
+    height: 40px;
+    width: 40px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 40px;
+  }
+  #content-text {
+    display: inline-block;
+    width: 98%;
+  }
+  .topcorner {
+    position:absolute;
+    top:10px;
+    right:10px;
+  }
 </style>
 <ion-view view-title="Events">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="event in events" ng-style="{'background-image':'url({{event.background}})','background-size' : 'cover', 'background-repeat' : 'no-repeat'}" href="#/app/events/{{playlist.id}}">
-        <div class="background-image" ></div>
-
+      <ion-item on-swipe-left="deleteItem(event)" class="item-remove-animate" ng-repeat="event in events" ng-style="{'background-image':'url({{event.background}})','background-size' : 'cover', 'background-repeat' : 'no-repeat'}" href="#/app/events/{{playlist.id}}">
         <div id="first-content" style="background-color: transparent !important">
-          <p id="title">{{event.title}}</p>
-          <p id="date">{{event.date}}</p>
-          <p id="location">{{event.location}}</p>
+          <div id="content-text">
+            <p id="title">{{event.title}}</p>
+            <p id="date">{{event.date}}</p>
+            <p id="location">{{event.location}}</p>
+          </div>
+          <div class="circle topcorner">
+            {{event.friendsdown}}
+          </div>
         </div>
       </ion-item>
     </ion-list>
