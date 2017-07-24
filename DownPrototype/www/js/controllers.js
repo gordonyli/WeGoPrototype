@@ -82,6 +82,16 @@ angular.module('starter.controllers', [])
         background: "http://www.arizonagrandresort.com/wp-content/uploads/2014/08/Gallery_OasisEvent.jpg"
       }
     ],
+    downs: [],
+
+    pushDownEvent: function(event) {
+      this.downs.push(event);
+    },
+
+    getDownEvents: function () {
+      return this.downs;
+    },
+
     getEvents: function () {
       return this.events;
     },
@@ -164,15 +174,25 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('EventCtrl', function($scope, $stateParams, EventService) {
+.controller('EventCtrl', function($scope, $ionicPopup, $stateParams, EventService) {
   $scope.eventId = $stateParams.eventId;
   $scope.event = EventService.getEvent($scope.eventId);
   $scope.month = EventService.getMonth($scope.event.date);
   $scope.day = EventService.getDay($scope.event.date);
+  $scope.pushDownEvent = function(event) {
+    var alertPopup = $ionicPopup.alert({
+      title: "You're Down!",
+      template: event.title + " added!"
+    });
+    alertPopup.then(function(res) {
+      console.log('Thank you for not eating my delicious ice cream cone');
+    });
+    EventService.pushDownEvent(event);
+  }
 })
 
 .controller("DownCtrl", function($scope, $stateParams, EventService, $location) {
-  $scope.events = EventService.getEvents();
+  $scope.events = EventService.getDownEvents();
   $scope.changeView = function(event){
     console.log("/events/" + event.id);
       $location.path("/events/"+ event.id); // path not hash
