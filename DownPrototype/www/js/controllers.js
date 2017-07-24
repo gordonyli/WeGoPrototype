@@ -48,13 +48,49 @@ angular.module('starter.controllers', [])
       description: "cool music",
       friendsdown: 3,
       date: "August 11, 2017",
-      location: "17 miles away"
+      location: "17 miles away",
+      background: "http://www.bakersfieldmusichalloffame.com/wp-content/uploads/2013/12/concert-wall.jpg"
     },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+    { title: 'Taste of Atlanta',
+      id: 2,
+      description: "yummy food",
+      friendsdown: 17,
+      date: "September 25, 2017",
+      location: "0.6 miles",
+      background: "https://c2.staticflickr.com/6/5736/23295852105_9c8b104dca_b.jpg"
+    },
+    { title: 'HackGT',
+      id: 3,
+      description: "hack gt",
+      friendsdown: 12,
+      date: "October 5, 2017",
+      location: "0.1 miles away",
+      background:"https://4.bp.blogspot.com/-pigPfRWS3Sw/VWX-feGd7II/AAAAAAABjLE/K3JemRkjclI/s0/Coding_with_Style_wallpaper.jpg"
+    },
+    { title: 'Pride Parade',
+      id: 4,
+      description: "naked people",
+      friendsdown: 21,
+      date: "September 22, 2017",
+      location: "1.1 miles away",
+      background:"http://www.tbo.com/storyimage/TB/20160326/ARTICLE/160329365/AR/0/AR-160329365.jpg"
+    },
+    { title: 'TED Talk',
+      id: 5,
+      description: "speeches",
+      friendsdown: 3,
+      date: "July 30, 2017",
+      location: "1.9 miles away",
+      background:"http://www.newstatesman.com/sites/all/themes/creative-responsive-theme/images/new_statesman_events.jpg"
+    },
+    { title: 'Oasis Pool Party',
+      id: 6,
+      description: "water ballons",
+      friendsdown: 12,
+      date: "December 1, 2017",
+      location: "0.5 miles away",
+      background:"http://www.arizonagrandresort.com/wp-content/uploads/2014/08/Gallery_OasisEvent.jpg"
+    }
   ];
 })
 
