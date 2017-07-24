@@ -1,8 +1,35 @@
+<style>
+  ion-item {
+    height: 30vh;
+    display: table;
+    margin-bottom: 2px !important;
+  }
+  #title {
+    font-size: 1.5em;
+  }
+  #first-content {
+    height: 100%;
+    color: white !important;
+  }
+  .item-content {
+    background-color: transparent !important;
+  }
+  p {
+    color: white !important;
+  }
+
+</style>
 <ion-view view-title="Events">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="event in events" href="#/app/events/{{playlist.id}}">
-        {{event.title}}
+      <ion-item ng-repeat="event in events" ng-style="{'background-image':'url({{event.background}})','background-size' : 'cover', 'background-repeat' : 'no-repeat'}" href="#/app/events/{{playlist.id}}">
+        <div class="background-image" ></div>
+
+        <div id="first-content" style="background-color: transparent !important">
+          <p id="title">{{event.title}}</p>
+          <p id="date">{{event.date}}</p>
+          <p id="location">{{event.location}}</p>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
