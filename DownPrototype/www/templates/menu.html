@@ -15,6 +15,20 @@
   .bar.bar-stable .title {
     color: white !important;
   }
+  .user {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url("http://image12.photobiz.com/6544/30_20121018201246_1763547_large.jpg");
+  }
+
+  .sidebar-item {
+    text-align: center;
+  }
 </style>
 
 <ion-side-menus enable-menu-with-back-views="false">
@@ -62,17 +76,21 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
+        <ion-item class="sidebar-item" menu-close ng-click="login()">
+          <div class="user">
+          </div>
         </ion-item>
-        <ion-item menu-close href="#/app/search">
+        <ion-item class="sidebar-item" menu-close href="#/app/search">
           Search
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
+        <ion-item class="sidebar-item" menu-close href="#/app/browse">
           Browse
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
+        <ion-item class="sidebar-item" menu-close href="#/app/playlists">
           Playlists
+        </ion-item>
+        <ion-item class="sidebar-item" menu-close ng-click="login()">
+          Logout
         </ion-item>
       </ion-list>
     </ion-content>

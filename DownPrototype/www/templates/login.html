@@ -1,25 +1,78 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
+<style>
+  #login {
+    background: #1c2627 url("https://s-media-cache-ak0.pinimg.com/736x/a9/43/be/a943bef592468dc30163b494e111ac0f--beach-night-sparklers.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .scroll-content {
+    display: table !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  form {
+    display: table-cell;
+    vertical-align: middle;
+    width: 70%;
+  }
+  .header {
+    padding-bottom: 20px;
+  }
+  img {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .button.button-light.active, .button.button-light.activated {
+    color: #fff;
+    opacity: inherit;
+  }
+  .logoimage {
+    height: 150px;
+    width: 150px;
+  }
+
+</style>
+
+<ion-view id="login" hide-nav-bar="true">
+  <ion-content padding="true" scroll="false">
     <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
+      <div class="row responsive-md" style="text-align: center">
+        <div class="col col-50 col-offset-25" style="width: 70%; margin-left: 15%">
+
+          <div class="header padding text-center">
+            <img class="logoimage" src="https://static1.squarespace.com/static/52b6128ce4b067a0f5987a3a/t/531e0c38e4b089910ebb227d/1394478136891/Event_icon.png" alt="Your logo here"/>
+          </div>
+
+          <div class="list">
+            <label class="item item-input">
+              <input type="email" placeholder="Email">
+            </label>
+            <label class="item item-input">
+              <input type="password" placeholder="Password">
+            </label>
+          </div>
+
+          <button class="button button-block button-positive" type="submit" style="background-color: #fba542; border: none;">
+            Log In
+          </button>
+
+          <div class="row row-no-padding">
+            <div class="col text-left">
+              <button class="button button-clear button-light" style="font-size: .9em">
+                Forgot password?
+              </button>
+            </div>
+
+            <div class="col text-right">
+              <button class="button button-clear button-light" style="font-size: .9em">
+                Sign up
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </form>
   </ion-content>
-</ion-modal-view>
+</ion-view>
