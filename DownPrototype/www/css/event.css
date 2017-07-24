@@ -1,9 +1,6 @@
 /* Empty. Add your own CSS if you like */
-.item item-description {
-    /*overflow: hidden;*/
-    text-overflow: ellipsis;
-    /*word-break: break-all;*/
-    /*word-wrap: break-word;*/
+.item-description {
+    white-space: normal;
 }
 
 time.icon
