@@ -1,5 +1,28 @@
+<style>
+  .row-wrap {
+    flex-wrap: wrap;
+  }
+
+  #thumbnail-content {
+    color: white !important;
+    border-bottom: 2px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+
+    height: 130px;
+    width: 100%;
+  }
+</style>
+
 <ion-view view-title="I'm Down For">
-  <ion-content>
-    <h1>Down</h1>
-  </ion-content>
+    <ion-content>
+      <div class="row row-wrap">
+    <div class=col-33 ng-repeat="event in events" ng-style="{'background-image':'url({{event.background}})','background-size' : 'cover', 'background-repeat' : 'no-repeat'}" href="#/app/events/{{event.id}}">
+
+    <div id="thumbnail-content" style="background-color: transparent !important">
+      <p id="title">{{event.title}}</p>
+    </div>
+
+</div>
+    </ion-content>
 </ion-view>

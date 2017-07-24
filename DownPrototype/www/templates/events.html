@@ -41,7 +41,7 @@
 <ion-view view-title="Events">
   <ion-content>
     <ion-list>
-      <ion-item on-swipe-left="deleteItem(event)" class="item-remove-animate" ng-repeat="event in events" ng-style="{'background-image':'url({{event.background}})','background-size' : 'cover', 'background-repeat' : 'no-repeat'}" href="#/app/events/{{playlist.id}}">
+      <ion-item on-swipe-left="deleteItem(event)" class="item-remove-animate" ng-repeat="event in events" ng-style="{'background-image':'url({{event.background}})','background-size' : 'cover', 'background-repeat' : 'no-repeat'}" href="#/app/events/{{event.id}}">
         <div id="first-content" style="background-color: transparent !important">
           <div id="content-text">
             <p id="title">{{event.title}}</p>

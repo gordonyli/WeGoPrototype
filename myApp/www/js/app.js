@@ -12,6 +12,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
+
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -23,60 +25,49 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('app', {
-    url: "/app",
+    .state('app', {
+    url: '/app',
     abstract: true,
-    templateUrl: "templates/menu.html",
+    templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
 
-  .state('app.down', {
-    url: "/down",
+  .state('app.search', {
+    url: '/search',
     views: {
-      'tab-down': {
-        templateUrl: "templates/down.html",
-        controller: "DownCtrl"
+      'menuContent': {
+        templateUrl: 'templates/search.html'
       }
     }
   })
 
-  .state('app.happening', {
-    url: "/happening",
-    views: {
-      'tab-happening': {
-        templateUrl: "templates/happening.html"
-      }
-    }
-  })
-
-  .state('app.notifications', {
-    url: "/notifications",
-    views: {
-      'tab-notifications': {
-        templateUrl: "templates/notifications.html"
-      }
-    }
-  })
-
-  .state('app.events', {
-    url: "/events",
-    views: {
-      'tab-events': {
-        templateUrl: "templates/events.html",
-        controller: 'EventsCtrl'
-      }
-    }
-  })
-
-    .state('app.single', {
-      url: "/events/:eventId",
+  .state('app.browse', {
+      url: '/browse',
       views: {
-        'tab-events': {
-          templateUrl: "templates/event.html",
-          controller: 'EventCtrl'
+        'menuContent': {
+          templateUrl: 'templates/browse.html'
         }
       }
-    });
+    })
+    .state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'PlaylistsCtrl'
+        }
+      }
+    })
+
+  .state('app.single', {
+    url: '/playlists/:playlistId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/playlist.html',
+        controller: 'PlaylistCtrl'
+      }
+    }
+  });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/events');
+  $urlRouterProvider.otherwise('/app/playlists');
 });
