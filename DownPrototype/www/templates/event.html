@@ -2,28 +2,28 @@
 <ion-view view-title="Event">
   <ion-content>
     <div class="item item-image">
-      <img class="cover-image" src="img/musicmidtown.png" height="50%" width="100%"></img>
+      <img class="cover-image" src="{{event.background}}" height="50%" width="100%"></img>
     </div>
     <div class="item item-title">
       <time datetime="2014-09-20" class="icon" style="display: inline-block; width: 15%; position: relative">
         <!--<em>Saturday</em>-->
-        <strong>SEP</strong>
-        <span>20</span>
+        <strong>{{month}}</strong>
+        <span>{{day}}</span>
       </time>
-      <h2 style="display:inline-block; width: 60%; position: relative; font-size: larger">event: {{event.title}}</h2>
+      <h2 style="display:inline-block; width: 60%; position: relative; font-size: larger">{{event.title}}</h2>
       <button class="button button-icon button-clear ion-arrow-down-c" style="color: #F7B733; display:inline-block; position: absolute; font-size: 2em">
       </button>
     </div>
     <div class="item item-details">
       <p1>
-        Date: September 25, 2017
+        Date: {{event.date}}
         <br> Time: 6:00 PM - 10:00 PM
-        <br> Location: Piedmont Park, Atlanta, GA
+        <br> Location: {{event.location}}
       </p1>
     </div>
     <div class="item item-description">
       <p1 style="white-space: normal">
-        The greatest artists around the country come together in one single music festival to bring Atlanta the best music.
+        {{event.description}}
       </p1>
       <p>
         <a href="#" class="subdued">5 Friends Down</a>
