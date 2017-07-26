@@ -44,7 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/happening",
     views: {
       'tab-happening': {
-        templateUrl: "templates/happening.html"
+        templateUrl: "templates/happening.html",
+        controller: "FriendsCtrl"
       }
     }
   })

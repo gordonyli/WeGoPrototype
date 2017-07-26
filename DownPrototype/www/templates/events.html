@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+
 <style>
   .event-card {
     height: 30vh;
@@ -32,6 +34,7 @@
   #content-text {
     display: inline-block;
     width: 98%;
+    font-family: "Avenir Next";
   }
   .topcorner {
     position:absolute;
@@ -39,7 +42,7 @@
     right:10px;
   }
 </style>
-<ion-view view-title="Events">
+<ion-view view-title="EVENTS">
   <ion-content>
     <ion-list>
       <ion-item on-swipe-left="deleteItem(event)" class="event-card item-remove-animate" ng-repeat="event in events" ng-style="{'background-image':'url({{event.background}})','background-size' : 'cover', 'background-repeat' : 'no-repeat'}" href="#/app/events/{{event.id}}">

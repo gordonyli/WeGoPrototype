@@ -2,6 +2,39 @@ angular.module('starter.controllers', [])
 
 .service('EventService', function() {
   return {
+    users: [
+    {
+      name: "Peter Wayne",
+      picture: "http://www.colemanphotographix.com/wp-content/uploads/MensHeadshot-0016.jpg",
+      did: "is down for Music Midtown"
+    },
+    {
+      name: "Lily Johnson",
+      picture: "https://digital-photography-school.com/wp-content/uploads/2016/02/Headshot-Photography-London-1052.jpeg",
+      did: "went to Taste of Atlanta"
+    },
+    {
+      name: "Sara O'Neill",
+      picture: "https://s-media-cache-ak0.pinimg.com/originals/e7/ca/b7/e7cab7dcff08b0dfe5b4fd065366dd5c.jpg",
+      did: "posted in HackGT"
+    },
+    {
+      name: "Joseph Hopper",
+      picture: "http://www.mackephotography.com/headshots/men/31_medium.jpg",
+      did: "is down for Music Midtown"
+    },
+    {
+      name: "Chandler Smith",
+      picture: "https://s-media-cache-ak0.pinimg.com/236x/b7/86/f3/b786f3c78b69f2a7f41e4e008f682eb6--headshot-photography-men-photography.jpg",
+      did: "is down for Oasis Pool Party"
+    },
+    {
+      name: "Becky Beckerson",
+      picture: "https://www.headshotsnyc.com/wp-content/uploads/galleries/post-13/05-Location-headshot-of-smiling-black-woman-with-long-afro-on-NYC-street-(Shamara-Loraine).jpg",
+      did: "liked HackGT's picture"
+    }
+  ],
+
     events: [
       {
         title: 'Music Midtown',
@@ -121,6 +154,9 @@ angular.module('starter.controllers', [])
           case "November": return "NOV";
           case "December": return "DEC";
       }
+    },
+    getUsers: function () {
+      return this.users;
     }
   }
 })
@@ -196,11 +232,13 @@ angular.module('starter.controllers', [])
   $scope.changeView = function(event){
     console.log("/events/" + event.id);
       $location.path("/events/"+ event.id); // path not hash
-  }
+  };
   $scope.goToEvent = function(event) {
     return event.id;
-  }
-  $scope.test = function() {
-    alert('sdfasdf');
-  }
+  };
+
+})
+
+.controller("FriendsCtrl", function($scope, EventService) {
+  $scope.users = EventService.getUsers();
 });

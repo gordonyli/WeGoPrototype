@@ -1,5 +1,38 @@
-<ion-view view-title="Browse">
+<style>
+  #content-pic {
+    display: inline-block;
+  }
+  #content-text-happening {
+    display: inline-block;
+    width: 80%;
+    vertical-align: top;
+    margin-left: 7%;
+  }
+  #name {
+    font-size: 1.1em;
+    font-weight: 300;
+  }
+  #did {
+    color: #F7B733;
+  }
+</style>
+
+<ion-view view-title="WHAT'S UP?">
   <ion-content>
-    <h1>Browse</h1>
+    <ion-list>
+      <ion-item ng-repeat="user in users">
+        <div id="first-content" style="background-color: transparent !important">
+          <div id="content-pic">
+            <img src="{{user.picture}}" style="border-radius:50%; width:80px; height:80px;">
+          </div>
+          <div id="content-text-happening">
+            <p id="name">{{user.name}}</p>
+            <p id="did">{{user.did}}</p>
+            <button class="button button-icon ion-heart" style="color: red;"></button>
+            <button class="button button-icon ion-chatbox" style="color: lavender;"></button>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

@@ -1,5 +1,15 @@
-<ion-view view-title="Notifications">
+<ion-view view-title="WHAT'S UP?">
     <ion-content>
-        <h1>Notifications</h1>
+        <ion-list>
+            <ion-item ng-repeat="user in users">
+                <div id="first-content" style="background-color: transparent !important">
+                    <div id="content-text">
+                        <p id="title">{{user.name}}</p>
+                        <p id="date">{{user.did}}</p>
+                        <img src="{{user.picture}}">
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>
