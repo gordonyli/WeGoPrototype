@@ -34,35 +34,23 @@
       </ion-slide>
 
       <ion-slide>
-
-        <div class="item item-image">
-          <img class="cover-image" src="{{event.background}}" height="50%" width="100%"></img>
-        </div>
-        <div class="item item-title">
-          <time datetime="2014-09-20" class="icon" style="display: inline-block; width: 15%; position: relative">
-            <!--<em>Saturday</em>-->
-            <strong>{{month}}</strong>
-            <span>{{day}}</span>
-          </time>
-          <h2 style="display:inline-block; width: 60%; position: relative; font-size: larger">{{event.title}}</h2>
-          <button class="button button-icon button-clear ion-arrow-down-c" style="color: #F7B733; display:inline-block; position: absolute; font-size: 2em">
-          </button>
-        </div>
-        <div class="item item-details">
-          <p1>
-            Date: {{event.date}}
-            <br> Time: 6:00 PM - 10:00 PM
-            <br> Location: {{event.location}}
-          </p1>
-        </div>
-        <div class="item item-description">
-          <p1 style="white-space: normal">
-            {{event.description}}
-          </p1>
-          <p>
-            <a href="#" class="subdued">5 Friends Down</a>
-          </p>
-        </div>
+        <ion-content>
+        <ion-list>
+          <ion-item ng-repeat="user in users">
+            <div id="first-content" style="background-color: transparent !important">
+              <div id="content-pic">
+                <img src="{{user.picture}}" style="border-radius:50%; width:80px; height:80px;">
+              </div>
+              <div id="content-text-happening">
+                <p id="name">{{user.name}}</p>
+                <p id="did">{{user.did}}</p>
+                <button class="button button-icon ion-heart" style="color: red;"></button>
+                <button class="button button-icon ion-chatbox" style="color: lavender;"></button>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+        </ion-content>
 
       </ion-slide>
     </ion-slide-box>
