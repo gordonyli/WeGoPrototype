@@ -35,22 +35,17 @@
 
       <ion-slide>
 
-        <ion-list>
-          <ion-item ng-repeat="user in users">
-            <div id="first-content" style="background-color: transparent !important">
-              <div id="content-pic">
-                <img src="{{user.picture}}" style="border-radius:50%; width:80px; height:80px;">
-              </div>
-              <div id="content-text-happening">
-                <p id="name">{{user.name}}</p>
-                <p id="did">{{user.did}}</p>
-                <button class="button button-icon ion-heart" style="color: red;"></button>
-                <button class="button button-icon ion-chatbox" style="color: lavender;"></button>
-              </div>
-            </div>
-          </ion-item>
-        </ion-list>
-
+        <div class="item item-image">
+          <img class="cover-image" src="{{event.background}}" height="50%" width="100%"></img>
+        </div>
+        <div>
+          <p style="margin: 5px 5px;padding: 10px; width: 150px; float:left; color: whitesmoke">125 friends down</p>
+          <p style="margin: 5px 5px;padding: 10px; width: 100px; float:right; color: whitesmoke">Comments</p>
+        </div>
+        <div class="boxed">
+          <p style="font-weight: bold; font-family: 'Verdana'; color: #F7B733 !important">Brighton Gerald</p>
+          <p>I'm going to see this in a couple of weeks and I can't wait.</p>
+        </div>
 
       </ion-slide>
     </ion-slide-box>

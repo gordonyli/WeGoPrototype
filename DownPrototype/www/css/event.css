@@ -57,4 +57,25 @@ time.icon span
     height: 100vh;
 }
 
+.boxed {
+    /*border: 1px solid green ;*/
+    vertical-align: middle;
+    display: block;
+    margin: auto;
+    width: 80%;
+    font-family: "Verdana";
+    color: whitesmoke;
+    font-size: small;
+    padding: 30px;
+    text-align: center;
+    background: #2E4053;
+    margin-top: 60px;
+
+    /*background: #F7B733 !important;*/
+}
+
+ion-content {
+    background-color: #5D6D7E;
+}
+
 

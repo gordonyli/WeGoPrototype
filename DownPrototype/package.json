@@ -10,9 +10,16 @@
     "gulp-rename": "^1.2.0"
   },
   "devDependencies": {
+    "@ionic/cli-plugin-gulp": "1.1.0",
+    "@ionic/cli-plugin-ionic1": "2.1.0",
     "bower": "^1.3.3",
     "gulp-util": "^2.2.14",
-    "shelljs": "^0.3.0"
+    "ionic": "3.6.0",
+    "shelljs": "^0.3.0",
+    "node-sass": "4.5.3"
+  },
+  "scripts" : {
+    "node-sass": "node-sass --output-style compressed -o dist/css src/scss"
   },
   "cordovaPlugins": [
     "com.ionic.keyboard"
