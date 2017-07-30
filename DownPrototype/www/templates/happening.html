@@ -4,35 +4,70 @@
   }
   #content-text-happening {
     display: inline-block;
-    width: 80%;
+    width: 60%;
     vertical-align: top;
     margin-left: 7%;
   }
   #name {
-    font-size: 1.1em;
-    font-weight: 300;
+    font-weight: bold;
   }
   #did {
     color: #F7B733;
+      font-weight: 500;
   }
+  .left-card-bar {
+    position: relative;
+    border: 2px #F7B733;
+    border-right-style: solid;
+    text-align:left;
+    padding-right:5% !important;
+  }
+  th {
+    padding:0; margin:0;
+  }
+  table {
+    border-collapse: collapse;
+  }
+    .card {
+        margin-bottom: -2% !important;
+    }
+    .happening_button {
+        padding-top: 1% !important;
+        padding-left: 0 !important;
+        min-height: 0 !important;
+        line-height: 0 !important;
+    }
+    #happening-pic {
+        height: 10%;
+    }
+
 </style>
 
-<ion-view view-title="WHAT'S UP?">
-  <ion-content>
+<ion-view view-title="What's Happening">
+  <ion-content style="background-color: #eeeeee">
     <ion-list>
-      <ion-item ng-repeat="user in users">
-        <div id="first-content" style="background-color: transparent !important">
-          <div id="content-pic">
-            <img src="{{user.picture}}" style="border-radius:50%; width:80px; height:80px;">
-          </div>
-          <div id="content-text-happening">
-            <p id="name">{{user.name}}</p>
-            <p id="did">{{user.did}}</p>
-            <button class="button button-icon ion-heart" style="color: red;"></button>
-            <button class="button button-icon ion-chatbox" style="color: lavender;"></button>
-          </div>
+      <div class="card" ng-repeat="user in users" style="height: 50%; border: thick #008F95;border-left-style: solid;">
+        <div class="item item-text-wrap" style="height: 100%;">
+              <div id="content-pic" style="margin-left: 5%;">
+                <img src="{{user.picture}}" style="border-radius:50%; width:60px; height:60px;">
+              </div>
+              <div id="content-text-happening">
+                <p id="name">{{user.name}}</p>
+                <p id="did">{{user.did}}</p>
+              <button class="button button-icon ion-heart happening_button" style="color: red;"></button>
+              <button class="button button-icon ion-chatbox happening_button" style="color: lavender; padding-left: 20%;"></button>
+              </div>
         </div>
-      </ion-item>
+          <div class="item item-image" ng-if="user.pic == true">
+              <img id="happening-pic"  src="{{user.piclink}}">
+          </div>
+          <div class="item item-divider" ng-if="user.posted == true">
+              <p style="font-size: .8em">
+                  <p style="display: inline-block; width: 90%;">Still looking for a group, message me!"
+                  <p style="font-size: .6em; display: inline-block; width: 7%">5 hr</p>
+              </p>
+          </div>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>

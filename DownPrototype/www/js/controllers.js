@@ -1,40 +1,7 @@
 angular.module('starter.controllers', [])
 
 .service('EventService', function() {
-  return {
-    users: [
-    {
-      name: "Peter Wayne",
-      picture: "http://www.colemanphotographix.com/wp-content/uploads/MensHeadshot-0016.jpg",
-      did: "is down for Music Midtown"
-    },
-    {
-      name: "Lily Johnson",
-      picture: "https://digital-photography-school.com/wp-content/uploads/2016/02/Headshot-Photography-London-1052.jpeg",
-      did: "went to Taste of Atlanta"
-    },
-    {
-      name: "Sara O'Neill",
-      picture: "https://s-media-cache-ak0.pinimg.com/originals/e7/ca/b7/e7cab7dcff08b0dfe5b4fd065366dd5c.jpg",
-      did: "posted in HackGT"
-    },
-    {
-      name: "Joseph Hopper",
-      picture: "http://www.mackephotography.com/headshots/men/31_medium.jpg",
-      did: "is down for Music Midtown"
-    },
-    {
-      name: "Chandler Smith",
-      picture: "https://s-media-cache-ak0.pinimg.com/236x/b7/86/f3/b786f3c78b69f2a7f41e4e008f682eb6--headshot-photography-men-photography.jpg",
-      did: "is down for Oasis Pool Party"
-    },
-    {
-      name: "Becky Beckerson",
-      picture: "https://www.headshotsnyc.com/wp-content/uploads/galleries/post-13/05-Location-headshot-of-smiling-black-woman-with-long-afro-on-NYC-street-(Shamara-Loraine).jpg",
-      did: "liked HackGT's picture"
-    }
-  ],
-
+    return {
     events: [
       {
         title: 'Music Midtown',
@@ -236,9 +203,56 @@ angular.module('starter.controllers', [])
   $scope.goToEvent = function(event) {
     return event.id;
   };
-
 })
 
-.controller("FriendsCtrl", function($scope, EventService) {
-  $scope.users = EventService.getUsers();
+.controller("FriendsCtrl", function($scope) {
+  $scope.users = [
+    {
+      name: "Peter Wayne",
+      picture: "http://www.colemanphotographix.com/wp-content/uploads/MensHeadshot-0016.jpg",
+      did: "is down for Music Midtown",
+      downs: 7,
+      timeago: "2 hrs"
+    },
+    {
+      name: "Lily Johnson",
+      picture: "https://digital-photography-school.com/wp-content/uploads/2016/02/Headshot-Photography-London-1052.jpeg",
+      did: "went to Taste of Atlanta",
+      downs: 7,
+      timeago: "2 hrs",
+      pic: true,
+      piclink: "http://cdn2.hubspot.net/hubfs/53/food-on-instagram.jpeg"
+    },
+    {
+      name: "Sara O'Neill",
+      picture: "https://s-media-cache-ak0.pinimg.com/originals/e7/ca/b7/e7cab7dcff08b0dfe5b4fd065366dd5c.jpg",
+      did: "posted in HackGT",
+      downs: 7,
+      timeago: "2 hrs",
+      posted: true
+    },
+    {
+      name: "Becky Beckerson",
+      picture: "https://www.headshotsnyc.com/wp-content/uploads/galleries/post-13/05-Location-headshot-of-smiling-black-woman-with-long-afro-on-NYC-street-(Shamara-Loraine).jpg",
+      did: "liked HackGT's picture",
+      downs: 7,
+      timeago: "2 hrs",
+      pic: true,
+      piclink: "http://nique.net/wp-content/uploads/2014/09/IMGP3814_Online_Edit.jpg"
+    },
+    {
+      name: "Joseph Hopper",
+      picture: "http://www.mackephotography.com/headshots/men/31_medium.jpg",
+      did: "is down for Music Midtown",
+      downs: 7,
+      timeago: "2 hrs"
+    },
+    {
+      name: "Chandler Smith",
+      picture: "https://s-media-cache-ak0.pinimg.com/236x/b7/86/f3/b786f3c78b69f2a7f41e4e008f682eb6--headshot-photography-men-photography.jpg",
+      did: "is down for Oasis Pool Party",
+      downs: 7,
+      timeago: "2 hrs"
+    }
+  ]
 });
